@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-timeago"
-version = "0.1.0"
+version = "0.1.1"
 description = "Convert timestamps to relative time phrases like '3 hours ago'"
 readme = "README.md"
 license = "MIT"
@@ -24,9 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/philiprehberger/py-timeago"
+Homepage = "https://github.com/philiprehberger/py-timeago#readme"
 Repository = "https://github.com/philiprehberger/py-timeago"
 Issues = "https://github.com/philiprehberger/py-timeago/issues"
+Changelog = "https://github.com/philiprehberger/py-timeago/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/philiprehberger_timeago"]
