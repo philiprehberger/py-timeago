@@ -37,6 +37,14 @@ timedelta_human(timedelta(hours=3, minutes=25))  # "3 hours, 25 minutes"
 - `timeago(dt, now=None)` — Relative time phrase from datetime, date, or Unix timestamp
 - `timedelta_human(td)` — Format a timedelta as readable duration
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
