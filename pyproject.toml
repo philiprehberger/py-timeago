@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-timeago"
-version = "0.1.5"
+version = "0.1.6"
 description = "Convert timestamps to relative time phrases like '3 hours ago'"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [{ name = "Philip Rehberger" }]
-keywords = ["timeago", "relative", "timestamp", "datetime", "ago", "human"]
+keywords = ["timeago", "relative", "timestamp", "datetime", "human"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
