@@ -3,6 +3,7 @@
 [![Tests](https://github.com/philiprehberger/py-timeago/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-timeago/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-timeago.svg)](https://pypi.org/project/philiprehberger-timeago/)
 [![License](https://img.shields.io/github/license/philiprehberger/py-timeago)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Convert timestamps to relative time phrases like "3 hours ago".
 
