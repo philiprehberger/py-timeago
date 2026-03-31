@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-timeago"
-version = "0.1.4"
+version = "0.1.5"
 description = "Convert timestamps to relative time phrases like '3 hours ago'"
 readme = "README.md"
 license = "MIT"
