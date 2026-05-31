@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta, timezone
-from philiprehberger_timeago import timeago, timedelta_human
+from philiprehberger_timeago import format_age, timeago, timedelta_human
 
 
 def _now():
@@ -79,3 +79,52 @@ def test_singular():
     result = timedelta_human(timedelta(hours=1))
     assert "1 hour" in result
     assert "hours" not in result
+
+
+def test_numeric_seconds():
+    dt = _now() - timedelta(seconds=30)
+    result = timeago(dt, numeric=True)
+    assert "second" in result
+    assert "just now" not in result
+
+
+def test_numeric_one_day_past():
+    dt = _now() - timedelta(days=1, seconds=10)
+    result = timeago(dt, numeric=True)
+    assert result == "1 day ago"
+
+
+def test_numeric_two_days_future():
+    dt = _now() + timedelta(days=2, seconds=10)
+    result = timeago(dt, numeric=True)
+    assert result == "in 2 days"
+
+
+def test_format_age_seconds():
+    dt = _now() - timedelta(seconds=5)
+    result = format_age(dt)
+    assert result in {"4s", "5s"}
+
+
+def test_format_age_minutes():
+    dt = _now() - timedelta(seconds=90)
+    result = format_age(dt)
+    assert result == "1m"
+
+
+def test_format_age_hours():
+    dt = _now() - timedelta(seconds=3 * 3600)
+    result = format_age(dt)
+    assert result == "3h"
+
+
+def test_format_age_days():
+    dt = _now() - timedelta(seconds=4 * 86400)
+    result = format_age(dt)
+    assert result == "4d"
+
+
+def test_format_age_future():
+    dt = _now() + timedelta(seconds=3600)
+    result = format_age(dt)
+    assert result.startswith("-")

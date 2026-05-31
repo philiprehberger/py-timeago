@@ -32,11 +32,40 @@ timeago(1709913600)
 timedelta_human(timedelta(hours=3, minutes=25))  # "3 hours, 25 minutes"
 ```
 
+### Compact age
+
+```python
+from philiprehberger_timeago import format_age
+from datetime import datetime, timedelta, timezone
+
+now = datetime.now(timezone.utc)
+
+format_age(now - timedelta(seconds=5))    # "5s"
+format_age(now - timedelta(minutes=3))    # "3m"
+format_age(now - timedelta(hours=2))      # "2h"
+format_age(now - timedelta(days=4))       # "4d"
+format_age(now + timedelta(hours=1))      # "-1h" (future)
+```
+
+### Numeric mode
+
+```python
+from philiprehberger_timeago import timeago
+from datetime import datetime, timedelta, timezone
+
+now = datetime.now(timezone.utc)
+
+timeago(now - timedelta(seconds=5), numeric=True)  # "5 seconds ago" (not "just now")
+timeago(now - timedelta(days=1), numeric=True)     # "1 day ago" (not "yesterday")
+timeago(now + timedelta(days=1), numeric=True)     # "in 1 day" (not "tomorrow")
+```
+
 ## API
 
 | Function / Class | Description |
 |------------------|-------------|
-| `timeago(dt, now=None)` | Relative time phrase from datetime, date, or Unix timestamp |
+| `timeago(dt, now=None, numeric=False)` | Relative time phrase from datetime, date, or Unix timestamp; `numeric=True` forces numeric phrasing |
+| `format_age(dt, now=None)` | Compact age string like `5s`, `3m`, `2h`, `4d`, `1mo`, `2y` (future prefixed with `-`) |
 | `timedelta_human(td)` | Format a timedelta as readable duration |
 
 ## Development
